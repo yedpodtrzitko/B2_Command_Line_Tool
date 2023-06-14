@@ -15,7 +15,7 @@ import pytest
 
 
 def test_files_headers():
-    for file in glob('**/*.py', recursive=True):
+    for file in (x for x in glob('**/*.py', recursive=True) if not x.startswith('debian')):
         with open(file) as fd:
             file = file.replace(
                 '\\', '/'

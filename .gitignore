@@ -1,10 +1,12 @@
 *.pyc
+.pc
 .codacy-coverage/
 .coverage
 .eggs/
 .idea
 .nox/
 .python-version
+.pybuild
 b2_cli.log
 b2.egg-info
 build
@@ -12,3 +14,8 @@ coverage.xml
 dist
 venv
 doc/source/main_help.rst
+debian/tmp
+debian/.debhelper/
+debian/backblaze-b2*
+debian/debhelper-build-stamp
+debian/files

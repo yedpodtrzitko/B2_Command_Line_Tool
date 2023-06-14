@@ -15,8 +15,16 @@ import sys
 import textwrap
 
 import arrow
-from rst2ansi import rst2ansi
 from b2sdk.v1 import RetentionPeriod
+
+try:
+    from rst2ansi import rst2ansi
+except ImportError:
+    # Debian compatibility
+    def rst2ansi(input_string, output_encoding='utf-8'):
+        if isinstance(input_string, bytes):
+            return input_string.decode(output_encoding)
+        return input_string.encode(output_encoding)
 
 _arrow_version = tuple(int(p) for p in arrow.__version__.split("."))
 
