@@ -1,0 +1,10 @@
+#! /usr/bin/make -f
+
+export DH_VERBOSE=1
+export PYBUILD_NAME=backblaze-b2
+
+override_dh_auto_test:
+	pytest ./test/unit/
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
