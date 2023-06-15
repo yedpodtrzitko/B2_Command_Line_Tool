@@ -13,10 +13,23 @@ import locale
 import re
 import sys
 import textwrap
+from contextlib import suppress
 
 import arrow
-from rst2ansi import rst2ansi
 from b2sdk.v2 import RetentionPeriod
+
+rst2ansi = None
+with suppress(ImportError):
+    from rst2ansi import rst2ansi
+
+if not rst2ansi:
+
+    def rst2ansi(input_string, output_encoding='utf-8'):
+        """Dummy replacement of rst2ansi which is not available in Debian."""
+        if isinstance(input_string, bytes):
+            return input_string.decode(output_encoding)
+        return input_string
+
 
 _arrow_version = tuple(int(p) for p in arrow.__version__.split("."))
 

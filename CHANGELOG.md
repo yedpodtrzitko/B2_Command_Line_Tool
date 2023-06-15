@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+* Unpin `setuptools-scm<6.0` as we don't support Python 3.5 (reason for pinning) anymore
 
 ### Infrastructure
 * Autocomplete integration tests will now work properly even if tested package has not been installed
