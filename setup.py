@@ -114,7 +114,7 @@ setup(
         'doc': read_requirements('doc'),
         'license': read_requirements('license'),
     },
-    setup_requires=['setuptools_scm<6.0'],
+    setup_requires=['setuptools_scm'],
     use_scm_version=True,
 
     # If there are data files included in your packages that need to be
@@ -133,6 +133,6 @@ setup(
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
-        'console_scripts': ['b2=b2.console_tool:main'],
+        'console_scripts': ['backblaze-b2=b2.console_tool:main'],
     },
 )
