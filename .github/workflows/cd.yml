@@ -160,6 +160,7 @@ jobs:
           tags: backblaze/b2:${{ steps.build.outputs.version }}
 
   debian-release:
+    if: ${{ vars.B2_DEBIAN_BUCKET_UPLOAD }}
     name: Build Debian Package
     uses: ./.github/workflows/cd_debian.yml
     secrets: inherit
