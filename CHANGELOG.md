@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Increase timeout time in autocomplete tests to accommodate slower CI environments
 * Update pyinstaller to fix Linux Bundle build
 * Replace `pyflakes` with `ruff` for linting
-* Add Debian package build to CI
+* Add Debian package build to CD
 
 ## [3.9.0] - 2023-04-28
 
